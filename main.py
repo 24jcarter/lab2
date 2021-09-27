@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import util
 
-
 GPIO.setmode(GPIO.BCM)
 
 led1 = 4
@@ -24,9 +23,9 @@ led3pwm.start(50)
 try:
 	while True:
 		if GPIO.input(switch1) == 1:
-			util.switchPressed(switch1)
+			util.switchPressed(led1)
 		if GPIO.input(switch2) == 1:
-			util.switchPressed(switch2)
+			util.switchPressed(led2)
 except KeyboardInterrupt:
 	led3pwm.stop()
 	GPIO.cleanup()
